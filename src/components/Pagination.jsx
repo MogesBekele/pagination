@@ -24,11 +24,14 @@ const Pagination = () => {
   };
 
   return (
-    <div className=" mt-10 m-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <div className='container mx-auto p-20'>
+      <div  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
       {currentJobs.map((job, index) => (
         <JobsCard key={index} job={job} />
       ))}
-      <div className="flex justify-between items-center mt-4">
+      </div>
+    
+      <div className="flex w-80 justify-between mx-auto items-center mt-32">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
