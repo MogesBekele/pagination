@@ -4,7 +4,7 @@ import JobsCard from './JobsCard';
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [jobsPerPage, setJobsPerPage] = useState(4);
+  const [jobsPerPage, setJobsPerPage] = useState(3);
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = jobsData.slice(indexOfFirstJob, indexOfLastJob);
@@ -24,7 +24,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mt-10 m-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
       {currentJobs.map((job, index) => (
         <JobsCard key={index} job={job} />
       ))}
