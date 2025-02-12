@@ -27,7 +27,7 @@ const Pagination = () => {
   return (
     <div className="container mx-auto p-4">
       {currentJobs.map((job, index) => (
-      <JobsCard job={job}/>
+      <JobsCard key={index} job={job}/>
       ))}
       <div className="flex justify-between items-center mt-4">
         <button
