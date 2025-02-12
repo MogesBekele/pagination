@@ -33,7 +33,7 @@ const Pagination = () => {
           <p className="text-gray-500 text-sm mt-4" dangerouslySetInnerHTML={{ __html: job.description.slice(0, 150) }}></p>
         </div>
       ))}
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between items-center mt-4">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
