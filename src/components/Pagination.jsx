@@ -1,5 +1,6 @@
 import React from 'react'
 import { jobsData } from '../assets/assets';
+import { useState } from 'react';
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -10,11 +11,11 @@ const Pagination = () => {
 
       {
         jobsData.map((job, index)=>(
-          <div className='flex gap-4 ' key={index}>
+          <div className=' gap-4 ' key={index}>
             <h1>{job.title}</h1>
             <h2>{job.level}</h2>
             <h3>{job.location}</h3>
-            <p>{job.description}</p>
+            <p className='text-gray-500 text-sm mt-4' dangerouslySetInnerHTML={{__html:job.description.slice(0,150)}}></p>
           </div>
         ))
       }
