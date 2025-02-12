@@ -1,6 +1,7 @@
 import React from 'react'
 import { jobsData } from '../assets/assets';
 import { useState } from 'react';
+import JobsCard from './JobsCard';
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,12 +27,7 @@ const Pagination = () => {
   return (
     <div className="container mx-auto p-4">
       {currentJobs.map((job, index) => (
-        <div className="gap-4 mb-4 p-4 border rounded shadow" key={index}>
-          <h1 className="text-xl font-bold">{job.title}</h1>
-          <h2 className="text-lg">{job.level}</h2>
-          <h3 className="text-md">{job.location}</h3>
-          <p className="text-gray-500 text-sm mt-4" dangerouslySetInnerHTML={{ __html: job.description.slice(0, 150) }}></p>
-        </div>
+      <JobsCard job={job}/>
       ))}
       <div className="flex justify-between items-center mt-4">
         <button
