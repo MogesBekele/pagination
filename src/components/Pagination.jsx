@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { jobsData } from '../assets/assets';
-import { useState } from 'react';
 import JobsCard from './JobsCard';
 
 const Pagination = () => {
@@ -27,7 +26,7 @@ const Pagination = () => {
   return (
     <div className="container mx-auto p-4">
       {currentJobs.map((job, index) => (
-      <JobsCard key={index} job={job}/>
+        <JobsCard key={index} job={job} />
       ))}
       <div className="flex justify-between items-center mt-4">
         <button
